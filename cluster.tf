@@ -53,7 +53,7 @@ resource "aws_db_subnet_group" "mysql" {
   }
 }
 
-resource "aws_secretsmanager_secret_version" "mongodb-url" {
+resource "aws_secretsmanager_secret_version" "mysql-url" {
   secret_id     = var.SECRET_ID
   secret_string = jsonencode({ "MYSQL_ENDPOINT" = aws_db_instance.mysql.address })
 }
